@@ -1,0 +1,7 @@
+version: '3.9'
+
+services:
+  python-web:
+    build: .
+    ports:
+      - "8080:5001"
