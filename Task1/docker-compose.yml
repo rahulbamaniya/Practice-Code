@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  web:
+    build: ./app
+    container_name: python_web
+    depends_on:
+      - redis
+    networks:
+      - mynet
+
+  redis:
+    image: redis:latest
+    container_name: my_redis
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: bridge

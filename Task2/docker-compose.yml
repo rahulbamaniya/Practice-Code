@@ -1,0 +1,13 @@
+server:
+  build: ./app
+  container_name: small_server
+  working_dir: /Task2
+  environment:
+    - DB_HOST=db
+    - DB_USER=postgres
+    - DB_PASSWORD=
+    - DB_NAME=testdb
+  depends_on:
+    - db
+  networks:
+    - mynet
